@@ -1,0 +1,15 @@
+@value makerWhite, makerGreen from '../../common/colors.css';
+
+.button {
+  background-color: makerGreen;
+  color: makerWhite;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5em;
+  font-size: 0.8rem;
+  flex: 1 1 50%;
+}
+
+.button:hover {
+  opacity: 0.8;
+}

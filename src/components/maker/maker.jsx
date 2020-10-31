@@ -6,8 +6,44 @@ import { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import Editor from '../editor/editor'
 import Preview from '../preview/preview'
+import { useState } from 'react'
 
 const Maker = ({ authService }) => {
+  const [cards, setCards] = useState([
+    {
+      id: '1',
+      name: 'Ellie1',
+      company: 'Samsung',
+      theme: 'dark',
+      title: 'Software Engineer',
+      email: 'ellie@gamil.com',
+      message: 'go for it',
+      fileName: 'ellie',
+      fileURL: null,
+    },
+    {
+      id: '2',
+      name: 'Ellie2',
+      company: 'Samsung',
+      theme: 'light',
+      title: 'Software Engineer',
+      email: 'ellie@gamil.com',
+      message: 'go for it',
+      fileName: 'ellie',
+      fileURL: 'ellie.png',
+    },
+    {
+      id: '3',
+      name: 'Ellie3',
+      company: 'Samsung',
+      theme: 'colorful',
+      title: 'Software Engineer',
+      email: 'ellie@gamil.com',
+      message: 'go for it',
+      fileName: 'ellie',
+      fileURL: null,
+    },
+  ])
   const history = useHistory()
 
   const onLogout = () => {
@@ -26,8 +62,8 @@ const Maker = ({ authService }) => {
     <section className={styles.maker}>
       <Header onLogout={onLogout} />
       <div className={styles.container}>
-        <Editor />
-        <Preview />
+        <Editor cards={cards} />
+        <Preview cards={cards} />
       </div>
       <Footer />
     </section>
