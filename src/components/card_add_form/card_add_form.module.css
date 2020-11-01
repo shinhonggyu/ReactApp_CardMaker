@@ -41,4 +41,5 @@
 
 .fileInput {
   flex: 1 1 50%;
+  padding: 0;
 }
